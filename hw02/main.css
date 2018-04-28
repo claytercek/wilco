@@ -1,0 +1,27 @@
+body {
+	padding: 1rem;
+	max-width: 1400px;
+	margin: auto;
+}
+
+object {
+	margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	object {
+		width: calc(50% - 2rem);
+	}
+
+}
+
+@media screen and (min-width: 1280px) {
+	object {
+		width: calc( 33% - 2rem );
+	}
+}
