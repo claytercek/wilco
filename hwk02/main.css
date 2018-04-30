@@ -16,6 +16,7 @@ object {
 
 	object {
 		width: calc(50% - 2rem);
+		height: 100%;
 	}
 
 }
