@@ -1,0 +1,251 @@
+@font-face {
+	font-family: "Avenir Next Condensed";
+	src: url("fonts/AvenirNextCondensed-Bold.woff2") format("woff2"),
+		url("fonts/AvenirNextCondensed-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: bold;
+}
+
+@font-face {
+	font-family: "Caveat Brush";
+	src: url("fonts/CaveatBrush-Regular.woff2") format("woff2"), url("fonts/CaveatBrush-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	background-color: #ff3751;
+}
+svg #TV_Body,
+svg .antennaBase {
+	mask: url(#mask);
+}
+.knob {
+	cursor: pointer;
+	transform-origin: center center;
+	transform-box: fill-box;
+	transform: rotate(0deg);
+	transition: transform 0.1s ease;
+}
+
+#audioIcon {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	height: 2rem;
+	width: 2rem;
+	cursor: pointer;
+	filter: drop-shadow(0 0.3rem #bc1e41);
+}
+
+a,
+h3 {
+	color: #ff3751;
+	margin: 0;
+	font-family: "Avenir Next Condensed", sans-serif;
+	line-height: calc(8.5vw);
+	font-size: 7vw;
+}
+
+.subtext {
+	position: relative;
+	top: -1rem;
+}
+
+h1 {
+	margin: 0;
+	font-size: 40vw;
+	font-family: "Caveat Brush", cursive;
+}
+
+#circle {
+	background-color: white;
+	box-shadow: 0 2vw #bc1e41;
+	border-radius: 100%;
+	text-align: center;
+	width: 80vw;
+	height: 80vw;
+	margin: 1.5rem auto;
+}
+.button {
+	display: none;
+}
+div.tv {
+	display: block;
+	width: 85vw;
+	margin: 0 auto;
+	position: relative;
+}
+
+object {
+	width: 100%;
+}
+div.black {
+	background-color: black;
+	width: 70%;
+	position: absolute;
+	left: 10%;
+	bottom: 15%;
+	z-index: -5;
+	height: 50%;
+}
+video {
+	position: absolute;
+	left: 10%;
+	bottom: 15%;
+	z-index: -2;
+	height: 50%;
+	opacity: 0;
+}
+.videoOn {
+	opacity: 1;
+}
+
+#AntennaL {
+	transform-box: fill-box;
+	transform-origin: bottom left;
+	animation: 2.1s ease infinite AntennaL;
+}
+
+@keyframes AntennaL {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	25% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	75% {
+		transform: rotate(10deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+#AntennaR {
+	transform-box: fill-box;
+	transform-origin: bottom left;
+	animation: 2.1s ease infinite AntennaR;
+}
+
+@keyframes AntennaR {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	25% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	75% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#circle {
+		width: calc(50vw - 2rem);
+		height: calc(50vw - 2rem);
+		margin: 2rem;
+	}
+
+	h1 {
+		font-size: 23vw;
+	}
+
+	a,
+	h3 {
+		font-size: 4vw;
+		line-height: 1.5;
+	}
+
+	h3:first-child {
+		display: none;
+	}
+
+	.button {
+		display: block;
+		background-color: white;
+		width: 25vw;
+		text-align: center;
+		text-decoration: none !important;
+		margin: 2rem 1rem;
+		padding: 0.5rem;
+		border-radius: 1rem;
+		box-shadow: 0 1.5vw #bc1e41;
+		transition: top 0.2s ease, box-shadow 0.2s ease;
+		position: relative;
+		top: 0px;
+	}
+
+	.button:hover {
+		position: relative;
+		top: -0.5vw;
+		box-shadow: 0 2.3vw #bc1e41;
+	}
+
+	div.text {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#audioIcon {
+		width: 4rem;
+		height: 5rem;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	div.text {
+		flex-direction: column;
+		width: 385px;
+		margin-left: 3rem;
+	}
+
+	body {
+		position: relative;
+		width: 1280px;
+		margin: auto;
+	}
+	#circle {
+		width: 400px;
+		height: 400px;
+	}
+
+	h1 {
+		font-size: 213px;
+	}
+
+	a,
+	h3 {
+		font-size: 35px;
+	}
+
+	.button {
+		width: 247px;
+		padding: 0.6rem;
+	}
+
+	div.tv {
+		width: 905px;
+		position: absolute;
+		top: 180px;
+		right: 0;
+	}
+}
